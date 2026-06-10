@@ -1,25 +1,29 @@
 #include <stdio.h>
+
 int main()
 {
-    int arr[100], n, i, j;
-    printf("Enter number of elements:");
+    int a[100], n, i;
+    int even = 0, odd = 0;
+
+    printf("Enter number of elements: ");
     scanf("%d", &n);
-    printf("Enter %d elements:\n", n);
-    for (i = 0; i < n; i++)
+
+    printf("Enter array elements:\n");
+    for(i = 0; i < n; i++)
     {
-        scanf("%d", &arr[i]);
+        scanf("%d", &a[i]);
     }
-    printf("Duplicate elements are:\n");
-    for (i = 0; i < n; i++)
+
+    for(i = 0; i < n; i++)
     {
-        for (j = i + 1; j < n; j++)
-        {
-            if (arr[i] == arr[j])
-            {
-                printf("%d", arr[i]);
-                break;
-            }
-        }
+        if(a[i] % 2 == 0)
+            even++;
+        else
+            odd++;
     }
+
+    printf("Even elements = %d\n", even);
+    printf("Odd elements = %d\n", odd);
+
     return 0;
 }
